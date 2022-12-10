@@ -213,14 +213,18 @@ This system is composed of a public website (front-office), for the clients to h
 _Security Challenges_
 
 (i) The users can update their information but cannot see the critical data, such as bank account ID and authorization, address, and other personal information.
+The information is stored in the same physical database, but the data separation must be enforced by the use of cryptography.
 
 (ii) The data is available according to the role:
     a) The marketing employees should not see personal information about the user other than his name, User ID, and energy consumption profile.
     b) The account manager should not be able to see the user consumption profile.
-    c) The system manager can edit the energy cost, tax values, and other internal data but cannot see the user's information.
+    c) The system manager can edit the energy cost, tax values, and other internal data but cannot see the user's information.  
+These information compartments are protected with cryptography and the different access levels require specific keys.
 
 (iii) If the user account is attacked, the attacker should not be able to get personal user information.
 Ideally should not be able to get the user ID and his energy consumption profile.
+The separation of personal data from consumption data is enforced by the use of cryptography.
+The energy management system should be able to access one compartment but not the other.
 
 ----
 
